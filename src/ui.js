@@ -24,8 +24,38 @@ class UI {
             `;
         });
 
-        // this.posts.insertAdjacentHTML('beforeend', output);
         this.posts.innerHTML = output;
+    }
+
+    showAlert(message, className){
+        this.clearAlert();
+
+        // Añadir alerta
+        let html = `
+            <div class="${className}">
+            <strong>Hecho!</strong> ${message}.
+            </div>
+        `;
+
+        document.querySelector('.postContainer').insertAdjacentHTML('beforebegin', html);
+
+        // Timeout
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
+    }
+
+    clearAlert() {
+        const currentAlert = document.querySelector('.alert');
+
+        if (currentAlert) {
+            currentAlert.remove()
+        }
+    }
+
+    clearFields() {
+        this.titleInput.value = '';
+        this.bodyInput.value = '';
     }
 }
 

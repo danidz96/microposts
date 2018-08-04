@@ -16,9 +16,29 @@
       "body": "This is post three"
     },
     {
-      "title": "Post cuatro",
-      "body": "cuarto post",
+      "title": "",
+      "body": "",
       "id": 4
+    },
+    {
+      "title": "",
+      "body": "",
+      "id": 5
+    },
+    {
+      "title": "",
+      "body": "",
+      "id": 6
+    },
+    {
+      "title": "Post cuatro ",
+      "body": "cuarto post",
+      "id": 7
+    },
+    {
+      "title": "",
+      "body": "",
+      "id": 8
     }
   ]
 }

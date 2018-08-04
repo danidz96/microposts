@@ -27,6 +27,8 @@ function submitPost(post) {
     // Crear post
     http.post('http://localhost:3000/posts', data)
         .then(data => {
+            ui.showAlert('Se ha eviado correctamente',  'alert alert-success');
+            ui.clearFields();
             getPosts();
         })
         .catch(err => console.log(err));
