@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "tilte": "Post One",
+            "body": "This is post one"
+        },
+        {
+            "id": 2,
+            "tilte": "Post Two",
+            "body": "This is post two"
+        },
+        {
+            "id": 3,
+            "tilte": "Post Three",
+            "body": "This is post three"
+        }
+    ]
+}
