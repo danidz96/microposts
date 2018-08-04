@@ -4,7 +4,7 @@ class UI {
         this.titleInput = document.querySelector('#title');
         this.bodyInput = document.querySelector('#body');
         this.idInput = document.querySelector('#id');
-        this.postSubmit = document.querySelector('#postSubmit');
+        this.postSubmit = document.querySelector('.post-submit');
         this.forState = 'add';
     }
 
@@ -56,6 +56,43 @@ class UI {
     clearFields() {
         this.titleInput.value = '';
         this.bodyInput.value = '';
+    }
+
+    // Rellenar el formulario
+    fillForm(data) {
+        this.titleInput.value = data.title;
+        this.bodyInput.value = data.body;
+        this.idInput.value = data.id;
+
+        this.changeFromState('edit');
+    }
+
+    // Pasar a estado de edición
+    changeFromState(type) {
+        if (type === 'edit') {
+            this.postSubmit.textContent = 'Actualizar';
+            this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+
+            // Crear botón para cancelar
+            let button = `<button class="post-cancel btn btn-secondary btn-lg btn-block mt-3">Cancelar</button>`;
+            this.postSubmit.parentElement.insertAdjacentHTML('beforeend', button);
+
+        } else {
+            this.postSubmit.textContent = 'Enviar';
+            this.postSubmit.className = 'post-submit btn btn-primary btn-block';
+
+            document.querySelector('.post-cancel').remove();
+
+            // Limpiar id
+            this.clearIdInput();
+
+            // Limpar los campos del formulario
+            this.clearFields();
+        }
+    }
+
+    clearIdInput() {
+        this.idInput.value = '';
     }
 }
 
