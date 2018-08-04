@@ -16,7 +16,7 @@ class UI {
                 <div class="card mb-3">
                     <div class="card-body">
                         <h4 class="card-title">${post.title}</h4>
-                        <p class="card-text">${post.body}</p>
+                        <p class="card-text lead">${post.body}</p>
                         <a href="#" class="edit card-link" data-id="${post.id}"><i class="fa fa-pencil"></i></a>
                         <a href="#" class="delete card-link" data-id="${post.id}"><i class="fa fa-remove"></i></a>
                     </div>
@@ -24,7 +24,8 @@ class UI {
             `;
         });
 
-        this.posts.insertAdjacentHTML('beforeend', output);
+        // this.posts.insertAdjacentHTML('beforeend', output);
+        this.posts.innerHTML = output;
     }
 }
 
